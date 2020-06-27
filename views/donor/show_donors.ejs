@@ -18,31 +18,30 @@
 	<div class="container">
 	    <div class="row">
 	    	<div style="width:20%; margin:2% auto" class="heading">
-	    		<h1>Hospitals<h1>   
+	    		<h1>Donors<h1>
 	    	</div>
 <div style="width:60%; margin:2% 20%">
 	<table class="table">
 		<thead class="thead-dark">
 			<tr>
-			  <th scope="col">Name</th>
-			  <th scope="col">Reg_ID</th>
-			  <th scope="col">Doctor_name</th>
-			  <th scope="col">License number</th>
-			  <th style="padding:10px;">City</th>				
+              <th scope="col">Blood_Grp</th>
+			  <th scope="col">DOB</th>
+			  <th scope="col">Organ To Be Donated</th>
+			  <th scope="col">Contact no.</th>
+			  <th scope="col">City</th>				
 			</tr>
 		  </thead>	
 		<tbody>
-			<% hospitals.forEach(function(hospital){ %>
-				<tr>	
-				<td><%= hospital.name %></td>
-				<td><%= hospital.reg_ID %></td>
-				<td><%= hospital.doctor_name %></td>
-				<td><%= hospital.license_no %></td>
-				<td><%= hospital.city %></td>
-				<tr>
-			<% }); %>
-		</tbody>
 
+		<% donors.forEach(function(donor){ %>
+		<tr>	
+		<td><%= donor.Blood_Grp %></td>
+		<td><%= donor.Organ_needed %></td>
+		<td><%= donor.contact_no %></td>
+		<td><%= donor.city %></td>
+		</tr>
+	<% }); %>
+		</tbody>
 	</table>
 	</div>
 <% include ../partials/footer %>

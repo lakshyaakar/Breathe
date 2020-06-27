@@ -56,11 +56,11 @@ app.post("/recipients",function(req,res){
 });
 
 app.get("/donors",function(req,res){
-	Donor.find({}, function(err,donor){
+	Donor.find({}, function(err,donors){
 	if(err)
 		console.log(err);
 	else
-		res.render("donor/show_donors.ejs", {donor: donor});
+		res.render("donor/show_donors.ejs", {donors: donors});
 	});
 });
 
