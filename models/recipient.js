@@ -3,31 +3,31 @@ var mongoose = require("mongoose");
 var recipientSchema = new mongoose.Schema({
 	name: {
 		type: String,
-		required
+		required: true
 	},
 	userId: {
 		type: String,
-		required
+		required: true
 	},
 	password: {
 		type: String,
-		required
+		required: true
 	},
 	blood_group: {
 		type: String,
-		required
+		required: true
 	},
 	organ_needed: {
 		type: String,
-		required
+		required: true
 	},
 	contact_no: {
 		type: Number,
-		required
+		required: true
 	},
 	city: {
 		type: String,
-		required
+		required: true
 	}
 });
 

@@ -3,27 +3,27 @@ var mongoose = require("mongoose");
 var hospitalSchema = new mongoose.Schema({
 	name: {
 		type: String,
-		required
+		required: true
 	},
 	reg_ID: {
 		type: String,
-		required
+		required: true
 	},
 	password: {
 		type: String,
-		required
+		required: true
 	},
 	license_no: {
 		type: Number,
-		required
+		required: true
 	},
 	contact_no: {
 		type: Number,
-		required
+		required: true
 	},
 	city: {
 		type: String,
-		required
+		required: true
 	}
 });
 
