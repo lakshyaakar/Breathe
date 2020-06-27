@@ -1,0 +1,22 @@
+<% include partials/header %>
+<div style="width:100%; text-align:center; margin-top:50px; margin-left:25%;">
+	<table border=1>
+	<tr style="border:1px solid black;">
+		<th style="padding:10px;">Name</th>
+		<th style="padding:10px;">Reg_ID</th>
+		<th style="padding:10px;">Doctor_name</th>
+		<th style="padding:10px;">License number</th>
+		<th style="padding:10px;">City</th>				
+	</tr>
+	<% hospitals.forEach(function(hospital){ %>
+		<tr>	
+		<td style="padding: 10px;"><%= hospital.name %></td>
+		<td style="padding: 10px;"><%= hospital.Reg_ID %></td>
+		<td style="padding: 10px;"><%= hospital.doctor_name %></td>
+		<td style="padding: 10px;"><%= hospital.license_no %></td>
+		<td style="padding: 10px;"><%= hospital.city %></td>
+		<tr>
+	<% }); %>
+	</table>
+	</div>
+<% include partials/footer %>
