@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Breathe|Hospital</title>
+    <link href="https://fonts.googleapis.com/css?family=Headland+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style type="text/css">
+        .button:focus,input:focus{
+            outline: none;
+        }
+        body{
+            background: url("img/iStock-927897070.jpg") no-repeat fixed;
+            background-size: cover;
+        }
+    </style>
+</head>    
+    <div class="container">
+    <div class="row">
+            <div style="width:100%; margin:2% auto; text-align:center;" class="heading">
+                <h1>Organ Availability Status<h1>
+            </div>
+            <div style="width:40%; margin:2% auto">
+            <form action="/status" method="POST">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="name" placeholder="Organ Name" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" name="bloodgrp" placeholder="Bloog Grp." required>
+                </div>
+
+                <div class="form=group" style="padding-bottom:4%;">
+                    <input type="text" class="form-control" name="duration" placeholder="Duration" required>    
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-primary btn-lg btn-block">Submit</button>    
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</div>
+<% include ../partials/footer %>

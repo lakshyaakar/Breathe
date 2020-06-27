@@ -12,7 +12,7 @@ app.use(bodyparser.urlencoded({extended : true}));
 var Recipient = require('./models/recipient');
 var Donor = require('./models/donor');
 var Hospital = require('./models/hospital');
-
+var Avail = require('./models/avail');
 
 
 
@@ -127,7 +127,7 @@ app.post("/hospitals",function(req,res){
 		if(err)
 			console.log(err);
 		else
-			res.redirect("/hospitals");
+			res.redirect("/status");
 	});
 });
 
@@ -136,6 +136,35 @@ app.get("/",function(req,res){
 	res.render("index.ejs");
 });
 
+app.get("/status",function(req,res){
+	Avail.find({}, function(err,organs){
+	if(err)
+		console.log(err);
+	else
+		res.render("./hospital/status", {organs: organs});
+	});
+});
+
+app.get("/avail",function(req,res){
+	res.render("./hospital/avail.ejs");
+});
+
+app.post("/status",function(req,res){
+	var name = req.body.name;
+	var bloodgrp = req.body.bloodgrp;
+	var duration = req.body.duration;
+	
+	Avail.create({
+			name: name,
+			bloodgrp: bloodgrp,
+			duration: duration
+		},function(err,organ){
+		if(err)
+			console.log(err);
+		else
+			res.redirect("/status");
+	});
+});
 
 app.listen(27017,process.env.IP,function(){
 	console.log("The Breathe Server Is Started");

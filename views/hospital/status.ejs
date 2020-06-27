@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Breathe|Hospital</title>
+    <link href="https://fonts.googleapis.com/css?family=Headland+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style type="text/css">
+        .button:focus,input:focus{
+            outline: none;
+        }
+        body{
+            background: url("img/iStock-927897070.jpg") no-repeat fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+	<div class="container">
+	    <div class="row">
+	    	<div style="width:25%; margin:2% auto" class="heading">
+	    		<h1>Hospital's Page<h1>
+	    	</div>
+	        <div style="width:60%; margin:2% 20%">
+	        	<table class="table">
+				  <thead class="thead-dark">
+				    <tr>
+				      <th scope="col">#</th>
+				      <th scope="col">Organ Name</th>
+				      <th scope="col">Blood Grp.</th>
+				      <th scope="col">Duration(in hrs.)</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+					<% var i=1; %>	
+					<% organs.forEach(function(organ){ %>
+						<tr>
+						<td><%= i %>
+						<% i=i+1 %>	
+						<td><%= organ.name %></td>
+						<td><%= organ.bloodgrp %></td>
+						<td><%= organ.duration %></td>
+						<tr>
+					<% }); %>
+				  </tbody>
+				</table>
+				<form action="/avail" method="GET">
+	                <div class="form-group" style="width:40%; margin : 1% auto">
+	                    <button class="btn btn-primary btn-lg btn-block">Available</button>    
+	                </div>	  
+                </form>
+                
+                <a href="/">Go Back</a>
+
+	    </div>
+	</div>
+
+    <% include ../partials/footer %>
