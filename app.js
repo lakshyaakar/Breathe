@@ -131,6 +131,7 @@ app.post("/hospitals",function(req,res){
 	});
 });
 
+
 app.get("/",function(req,res){
 	res.render("index.ejs");
 });
