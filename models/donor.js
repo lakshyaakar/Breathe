@@ -3,31 +3,31 @@ var mongoose = require("mongoose");
 var donorSchema = new mongoose.Schema({
 	name: {
 		type: String,
-		required
+		required: true
 	},
 	userId: {
 		type: String,
-		required
+		required: true
 	},
 	password: {
 		type: String,
-		required
+		required: true
 	},
 	blood_group: {
 		type: String,
-		required
+		required: true
 	},
 	organ: {
 		type: String,
-		required
+		required: true
 	},
 	contact_no: {
 		type: Number,
-		required
+		required: true
 	},
 	city: {
 		type: String,
-		required
+		required: true
 	}
 });
 
