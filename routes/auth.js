@@ -51,7 +51,7 @@ router.post("/recipients",function(req,res){
 			if(err)
 				console.log(err);
 			else
-				res.redirect("/recipients");
+				res.redirect("/status");
 				//console.log("user saved successfullyy");
 			});
 
@@ -80,9 +80,9 @@ router.post("/recipients/signin",function(req,res){
 		bcrypt.compare(password,savedUser.password)
 		.then(doMatch=>{
 			if (doMatch) {
-				//res.redirect('/');
-				const token = jwt.sign({_id:savedUser._id},JWT_SECRET)
-				res.json({token});
+				res.redirect('/status');
+				// const token = jwt.sign({_id:savedUser._id},JWT_SECRET)
+				// res.json({token});
 			}
 			else
 				return res.status(422).json({err:"Invalid Email or password"})
@@ -129,7 +129,7 @@ router.post("/donors",function(req,res){
 			if(err)
 				console.log(err);
 			else
-				res.redirect("/donors");
+				res.redirect("/");
 				//console.log("user saved successfullyy");
 			});
 
@@ -205,7 +205,7 @@ router.post("/hospitals",function(req,res){
 			if(err)
 				console.log(err);
 			else
-				res.redirect("/hospitals");
+				res.redirect("/hospitals_status");
 				//console.log("user saved successfullyy");
 			});
 
@@ -235,7 +235,7 @@ router.post("/hospitals/signin",function(req,res){
 		bcrypt.compare(password,savedUser.password)
 		.then(doMatch=>{
 			if (doMatch) {
-				res.json({mess:"successfullyy signed in"})
+				res.redirect('/hospitals_status');
 			}
 			else
 				return res.status(422).json({err:"Invalid Email password"})

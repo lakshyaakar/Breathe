@@ -51,11 +51,20 @@ router.get("/status",function(req,res){
 	});
 });
 
+router.get("/hospitals_status",function(req,res){
+	Avail.find({}, function(err,organs){
+	if(err)
+		console.log(err);
+	else
+		res.render("./hospital/status_hospitals", {organs: organs});
+	});
+});
+
 router.get("/avail",function(req,res){
 	res.render("./hospital/avail.ejs");
 });
 
-router.post("/status",function(req,res){
+router.post("/hospitals_status",function(req,res){
 	var name = req.body.name;
 	var bloodgrp = req.body.bloodgrp;
 	var duration = req.body.duration;
@@ -68,7 +77,7 @@ router.post("/status",function(req,res){
 		if(err)
 			console.log(err);
 		else
-			res.redirect("/status");
+			res.redirect("/hospitals_status");
 	});
 });
 
