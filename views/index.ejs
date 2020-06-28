@@ -65,12 +65,14 @@
             <div class="banner-text text-center">
               <h1 class="white">The gift that lives on</h1>
               <p>You Make a Difference... We make it easier!!</p>
-              <a href="/donors/new" class="btn btn-appoint" style="margin-left: 45px;">Register as Donor</a>
-                <a href="/recipients/new" class="btn btn-appoint" style="margin-left: 45px;" >Register as Recipient</a>
-                <a href="/hospitals/new" class="btn btn-appoint" style="margin-left: 45px;">Register as hospital</a>
-              <a href="/donors/signin" class="btn btn-appoint" style="margin-left: 45px;">Login as Donor</a>
-                <a href="/recipients/signin" class="btn btn-appoint" style="margin-left: 45px;" >Login as Recipient</a>
-                <a href="/hospitals/signin" class="btn btn-appoint" style="margin-left: 45px;">Login as hospital</a>
+              <button class="btn btn-appoint" style="margin-right: 40px;" onclick="toggleReg()">Register</button>
+              <button class="btn btn-appoint" onclick="toggleLogin()">Login</button>
+              <a href="/donors/new" class="btn btn-appoint reg" style="margin-left: 45px;">Register as Donor</a>
+              <a href="/recipients/new" class="btn btn-appoint reg" style="margin-left: 45px;" >Register as Recipient</a>
+              <a href="/hospitals/new" class="btn btn-appoint reg" style="margin-left: 45px;">Register as hospital</a>
+              <a href="/donors/signin" class="btn btn-appoint login" style="margin-left: 45px;">Login as Donor</a>
+              <a href="/recipients/signin" class="btn btn-appoint login" style="margin-left: 45px;" >Login as Recipient</a>
+              <a href="/hospitals/signin" class="btn btn-appoint login" style="margin-left: 45px;">Login as hospital</a>
             </div>
             <div class="overlay-detail text-center">
               <a href="#service"><i class="fa fa-angle-down"></i></a>
@@ -280,5 +282,32 @@ Organ donors can help us in this noble cause and save invaluable lives.</p>
       </div>
     </div>
   </section>
+
+  <script>
+
+    function toggleReg(){
+      var str = "";
+      var arr = document.getElementsByClassName("reg");
+      var arr2 = document.getElementsByClassName("login");
+      for(var i=0;i<arr.length;i++){
+        arr[i].style.display = "block";
+      }
+      for(var i=0; i<arr2.length ; i++){
+        arr2[i].style.display = "none";
+      }
+    }
+
+    function toggleLogin(){
+      var str = "";
+      var arr = document.getElementsByClassName("login");
+      var arr2 = document.getElementsByClassName("reg");
+      for(var i=0;i<arr.length;i++){
+        arr[i].style.display = "block";
+      }
+      for(var i=0; i<arr2.length ; i++){
+        arr2[i].style.display = "none";
+      }
+    }
+  </script>
  
 <% include partials/footer.ejs %>
