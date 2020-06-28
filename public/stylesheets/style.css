@@ -333,3 +333,14 @@ contact us
 .form-control{
 	height: 40px;
 }
+
+.reg,.login{
+    display: none;
+    width: 180px;
+    margin-left: auto!important;
+    margin-right: auto!important;
+}
+
+button {
+    transition: 0.5s ease all;
+}
