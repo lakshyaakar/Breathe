@@ -21,6 +21,7 @@ app.use(bodyparser.urlencoded({extended : true}));
 app.use('/',indexRouter);
 app.use('/',authRouter);
 
-app.listen(27017,process.env.IP,function(){
+var PORT = process.env.PORT || 27017;
+app.listen(PORT,process.env.IP,function(){
 	console.log("The Breathe Server Is Started");
 });
