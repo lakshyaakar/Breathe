@@ -122,7 +122,7 @@ router.post("/donors",function(req,res){
 				userID: userID, 
 				password: hashedpassword,
 				blood_group: blood_group,
-				organ_needed: organ,
+				organ: organ,
 				contact_no: contact_no,
 				city: city
 			},function(err,donor){
