@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Breathe|Hospital</title>
+    <title>Breathe|Donors</title>
     <link href="https://fonts.googleapis.com/css?family=Headland+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
@@ -18,30 +18,31 @@
 	<div class="container">
 	    <div class="row">
 	    	<div style="width:20%; margin:2% auto" class="heading">
-	    		<h1>Donors<h1>
+	    		<h1>Donors<h1>   
 	    	</div>
 <div style="width:60%; margin:2% 20%">
 	<table class="table">
 		<thead class="thead-dark">
 			<tr>
-              <th scope="col">Blood_Grp</th>
-			  <th scope="col">DOB</th>
-			  <th scope="col">Organ To Be Donated</th>
-			  <th scope="col">Contact no.</th>
-			  <th scope="col">City</th>				
+			  <th scope="col">Blood_Grp</th>
+			  <th scope="col">Oragan to be Donated</th>
+			  <th scope="col">Contact </th>
+			  <th scope="col">License number</th>
+			  <th style="padding:10px;">City</th>				
 			</tr>
 		  </thead>	
 		<tbody>
-
-		<% donors.forEach(function(donor){ %>
-		<tr>	
-		<td><%= donor.Blood_Grp %></td>
-		<td><%= donor.Organ_needed %></td>
-		<td><%= donor.contact_no %></td>
-		<td><%= donor.city %></td>
-		</tr>
-	<% }); %>
+			<% donors.forEach(function(donor){ %>
+				<tr>	
+				<td><%= hospital.blood_group %></td>
+				<td><%= hospital.organ %></td>
+				<td><%= hospital.contact_no %></td>
+				<td><%= hospital.license_no %></td>	
+				<td><%= hospital.city %></td>
+				<tr>
+			<% }); %>
 		</tbody>
+
 	</table>
 	</div>
 <% include ../partials/footer %>

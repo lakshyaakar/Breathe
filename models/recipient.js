@@ -5,7 +5,7 @@ var recipientSchema = new mongoose.Schema({
 		type: String,
 		required: true
 	},
-	userId: {
+	userID: {
 		type: String,
 		required: true
 	},

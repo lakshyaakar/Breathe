@@ -1,34 +1,50 @@
 <% include ../partials/header %>
 <div class="container">
     <div class="row">
-        <h1 style="text-align:center;">Hospital Registration Form</h1>
+        <h1 style="text-align:center; margin-top: 5%;">Hospital Form</h1>
         <div style="width:30%; margin:2% auto">
             <form action="/hospitals" method="POST">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="name" placeholder="Hospital Name" required>
+                    <input type="text" class="form-control" name="name" placeholder="Name" required>
                 </div>
                 <div class="form=group" style="padding-bottom:4%;">
-                    <input type="text" class="form-control" name="userID" placeholder="Registration Number of Hospital" required>    
+                    <input type="text" class="form-control" name="reg_ID" placeholder="Regisration Number" required>    
                 </div>
                 <div class="form=group" style="padding-bottom:4%;">
                     <input type="password" class="form-control" name="password" placeholder="Password" required>    
                 </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" name="doctor_name" placeholder="Name of Doctor In-charge" required>
+                <div class="form=group" style="padding-bottom:4%;">
+                    <input type="number" class="form-control" name="license_no" placeholder="Liscense Number" required>    
+                </div>  
+              
+                <div class="form=group" style="padding-bottom:4%;">
+                    <input type="number" class="form-control" name="contact_no" placeholder="Contact Number " required>    
+                </div>
+
+                <div class="form=group" style="padding-bottom:4%;">
+                    <input type="text" class="form-control" name="city" placeholder="City of Recipient" required> 
+                </div>
+<!--                 </div>
+                <div class="form=group" style="padding-bottom:4%;">
+                    <input type="text" class="form-control" name="city" placeholder="License Number of Reffered doctor" required> 
                 </div>
                 <div class="form=group" style="padding-bottom:4%;">
-                    <input type="text" class="form-control" name="license_no" placeholder="License number of the doctor" required>    
-                </div>
-                <div class="form=group" style="padding-bottom:4%;">
-                    <input type="text" class="form-control" name="city" placeholder="Hospital city" required>    
-                </div>
+                    <label style="font-weight: normal;">Upload Report : </label>
+                    <input type="file" onchange="load(event)" style="float: right;">
+                    <img id="x">
+                    <script>
+                      var load = function(event) {
+                        var x = document.getElementById('x');
+                        x.src = URL.createObjectURL(event.target.files[0]);
+                      };
+                    </script>
+                </div> -->
                 <div class="form-group">
                     <button class="btn btn-primary btn-lg btn-block">Submit</button>    
                 </div>
             </form>
-            
-        <a href="https://lakshyaakar.github.io/Organ__Donation/index.html">Go Back</a>
+                    <a href="/">Go Back</a>
         </div>
     </div>
 </div>
-<% include ../partials/footer %>
+<% include ../partials/header %>
